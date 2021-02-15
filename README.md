@@ -144,7 +144,10 @@ Future improvements that I would've liked to work on:
   consequences of sending an API request on every key stroke. I believe that
   using my debounce method slightly improved this, but would be worth digging
   into a bit more.
-- Better styling and animations. I like things to be pretty and fun. For example, I would like for the movie cards to have some sort of flip animation on hover for dektop and click for mobile so that they rotate around and show the description on the "back".
+- Better styling and animations. I like things to be pretty and fun. For
+  example, I would like for the movie cards to have some sort of flip animation
+  on hover for dektop and click for mobile so that they rotate around and show
+  the description on the "back".
 - More featured pagination component.
 - Loading and error states. Display these states to the user and ensure there
   are no flashes of content before API response as there is now.
