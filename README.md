@@ -43,7 +43,7 @@ more proficient with styled-components.
 It has also been awhile since I have used Jest. My tests were failing at first,
 but luckily my custom context hooks informed me that I needed to bring in both
 context providers into my test files to wrap the components I was testing. I'm
-sure there is a better way, and I look forward to getting my testing Jest and
+sure there is a better way, and I look forward to getting my Jest and
 testing skills polished and sharp.
 
 # Reasoning Behind Design Decisions
