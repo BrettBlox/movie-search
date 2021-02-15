@@ -1,7 +1,11 @@
+import styled from 'styled-components'
 import { debounce } from 'lodash'
+import { useMovie } from 'context/movie-context'
 import { Search } from 'components/search/search'
+import { Movie } from 'components/movie/movie'
 
 export const MovieList = () => {
+  const { movies, totalPages, query, setQuery } = useMovie()
 
   const handleInputChange = (e) => {
     e.persist()
@@ -12,7 +16,7 @@ export const MovieList = () => {
      */
     const debouncedFn = debounce(() => {
       let searchString = e.target.value
-      console.log(searchString)
+      setQuery(searchString)
     }, 500)
     debouncedFn()
   }
@@ -20,6 +24,19 @@ export const MovieList = () => {
   return (
     <>
       <Search onChange={handleInputChange} />
+      {movies && totalPages > 0 && (
+        <MovieGridStyles>
+          {movies.map((movie, i) => (
+            <Movie movie={movie} />
+          ))}
+        </MovieGridStyles>
+      )}
     </>
   )
 }
+
+const MovieGridStyles = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1.5rem;
+`
