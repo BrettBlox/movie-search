@@ -1,5 +1,6 @@
 # Getting Started
 
+[View Live Site Here|https://bretts-movie-search.netlify.app/]
 ## After forking and cloning this repo to your machine
 
 - Run command `yarn` to install dependencies
