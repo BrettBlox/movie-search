@@ -3,6 +3,15 @@ import styled from 'styled-components'
 import { MOVIE_POSTER_BASE_URL } from 'CONSTANTS'
 import { useTheme } from 'context/theme-context'
 
+/**
+ * 
+ * Individual movie grid item
+ * 
+ * Takes movie data passed from movies list .map call and spits out grid item
+ * with poster image, movie title, movie rating out of ten,the release date and 
+ * a button for showing/hiding the movie description in place of those elements.
+ * 
+ */
 export const Movie = ({ movie }) => {
   const [releaseDate, setReleaseDate] = useState()
   const [showDescription, setShowDescription] = useState(false)

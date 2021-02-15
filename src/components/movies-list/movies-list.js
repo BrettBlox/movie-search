@@ -4,6 +4,9 @@ import { useMovie } from 'context/movie-context'
 import { Search } from 'components/search/search'
 import { Movie } from 'components/movie/movie'
 
+/**
+ * Grid of individual movie cards for displaying results returned from search query
+ */
 export const MovieList = () => {
   const { movies, totalPages, setQuery } = useMovie()
 
@@ -13,6 +16,8 @@ export const MovieList = () => {
     /**
      * Delays api call by 500ms to allow user to type more characters before making api request.
      * Using debounce method from lodash
+     * 
+     * This should be improved but was the quickest solution I could come up with for this idea.
      */
     const debouncedFn = debounce(() => {
       let searchString = e.target.value
