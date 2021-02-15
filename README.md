@@ -1,6 +1,7 @@
 # Getting Started
 
 ## [View Live Site Here](https://bretts-movie-search.netlify.app/)
+
 ## After forking and cloning this repo to your machine
 
 - Run command `yarn` to install dependencies
@@ -8,11 +9,11 @@
 - Replace placehold [API_KEY_GOES_HERE] text with valid API key from movie
   database API
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+#### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -20,13 +21,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+#### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests)
 for more information.
 
-# Challenges and How I Overcame Them
+## Challenges and How I Overcame Them
 
 My primary challenge on this project was coming up with a simple and robust plan
 of action ahead of time to prevent myself from spending way too much time. I
@@ -44,10 +45,10 @@ more proficient with styled-components.
 It has also been awhile since I have used Jest. My tests were failing at first,
 but luckily my custom context hooks informed me that I needed to bring in both
 context providers into my test files to wrap the components I was testing. I'm
-sure there is a better way, and I look forward to getting my Jest and
-testing skills polished and sharp.
+sure there is a better way, and I look forward to getting my Jest and testing
+skills polished and sharp.
 
-# Reasoning Behind Design Decisions
+## Reasoning Behind Design Decisions
 
 I spent quite a bit of time the day before building this app coming up with a
 plan of action which included:
@@ -133,7 +134,7 @@ Netlify is really awesome and incredibly easy to use. It took me five minutes to
 deploy this site and setup a workflow for deploying the site when pushing to the
 master branch. Seemed like a no brainer.
 
-# Future Improvements
+## Future Improvements
 
 Future improvements that I would've liked to work on:
 
