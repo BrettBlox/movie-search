@@ -9,7 +9,6 @@ export const Search = ({ onChange }) => {
       <div>
         <label htmlFor='movie-search'>Search Movies</label>
         <input
-          data-testid='moviesearch'
           id='movie-search'
           type='text'
           placeholder='Start typing...'
