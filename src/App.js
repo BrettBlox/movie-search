@@ -1,9 +1,12 @@
 import { ThemeProvider } from 'context/theme-context'
+import { MovieProvider } from 'context/movie-context'
 import { Layout } from 'components/layout/layout'
 
 const App = () => (
   <ThemeProvider>
-    <Layout>BODY STUFF HERE</Layout>
+    <MovieProvider>
+      <Layout>MOVIES LIST</Layout>
+    </MovieProvider>
   </ThemeProvider>
 )
 
