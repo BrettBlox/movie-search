@@ -5,7 +5,7 @@ import { Search } from 'components/search/search'
 import { Movie } from 'components/movie/movie'
 
 export const MovieList = () => {
-  const { movies, totalPages, query, setQuery } = useMovie()
+  const { movies, totalPages, setQuery } = useMovie()
 
   const handleInputChange = (e) => {
     e.persist()
