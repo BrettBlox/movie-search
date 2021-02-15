@@ -61,14 +61,14 @@ plan of action which included:
 - Taking tutorials to quickly get back up to speed with styled-components
 - Revisiting blog posts to refresh my memory on certain tools and patterns
 - Plenty of time figuring out the movie db api and messing around with the
-  variou endpoints
+  various endpoints
 
 ### Libraries Used
 
 I chose styled-components because I know that is a tool used at Group Nine and I
 had enjoyed my limited experience using this library on previous projects.
 
-I pulled in lodash specifically to use one method, the debounce method for
+I pulled in lodash specifically to use one method, the debounce method, for
 trying to slightly improve the performance of the search component. I wanted to
 delay the API requests ever so slightly so that fewer requests were sent. I
 would like to spend more time investigating whether or not this method improved
@@ -92,11 +92,12 @@ I'm sure it wouldve been more efficient to use the built in ThemeProvider had I
 known how it worked. Definitely something I would like to learn more about.
 
 Both contexts export a custom hook called use[ContextName] which exports all of
-the data and functions being passed to the parent providor. I like this becuase
-I can very easily get the values that I need from this custom hook such as
-`const { colors, breakpoints } = useTheme()`. I have been using this pattern
-regularly on professional projects and first was introduced to it from Kent C.
-Dodds in one of his state management blog posts.
+the data and functions being passed to the parent provider and throws a useful 
+error message should I try to use this context outside of it's provider. I like 
+this becuase I can very easily get the values that I need from this custom hook 
+such as `const { colors, breakpoints } = useTheme()`. I have been using this 
+pattern regularly on professional projects and first was introduced to it from 
+Kent C. Dodds in one of his state management blog posts.
 
 ### ENV Vars and CONSTANTS File
 
