@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## After forking and cloning this repo to your machine
+
+- Run command `yarn` to install dependencies
+- Create .env in root directory using env vars provided in .env.sample
+- Replace placehold [API_KEY_GOES_HERE] text with valid API key from movie
+  database API
 
 ## Available Scripts
 
@@ -17,54 +22,140 @@ You will also see any lint errors in the console.
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests)
+for more information.
 
-### `yarn build`
+# Challenges and How I Overcame Them
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+My primary challenge on this project was coming up with a simple and robust plan
+of action ahead of time to prevent myself from spending way too much time. I
+wanted this application to be as "perfect" as possible without going overboard
+and sabatoging my 3 hour deadline.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Additional challenges were mostly related to setting up my theming system with
+styled-components. It has been quite awhile since I used this library so I
+needed to take an online course prior to starting this app to help refresh my
+memory. I enjoy styled-components, but think it could be easy for things to
+become chaotic without having a consistent process for naming, organizing and
+passing around the global theme styles. I am excited to learn more and to become
+more proficient with styled-components.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+It has also been awhile since I have used Jest. My tests were failing at first,
+but luckily my custom context hooks informed me that I needed to bring in both
+context providers into my test files to wrap the components I was testing. I'm
+sure there is a better way, and I look forward to getting my testing Jest and
+testing skills polished and sharp.
 
-### `yarn eject`
+# Reasoning Behind Design Decisions
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+I spent quite a bit of time the day before building this app coming up with a
+plan of action which included:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Which libraries to include
+- Folder structure and component hierarchy
+- Whether or not to use context or manage state locally per component and
+  utilize more prop drilling
+- If using context, why and which contexts to create
+- Taking tutorials to quickly get back up to speed with styled-components
+- As well as plenty of time figuring out the movie db api and messing around
+  with endpoints
+- Deployed to Netlify
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Libraries Used
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I chose styled-components because I know that is a tool used at Group Nine and I
+had enjoyed my limited experience using this library on previous projects.
 
-## Learn More
+I pulled in lodash specifically to use one method, the debounce method for
+trying to slightly improve the performance of the search component. I wanted to
+delay the API requests ever so slightly so that fewer requests were sent. I
+would like to spend more time investigating whether or not this method improved
+the performance and what can be done to improve upon it.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Context
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I decided to use the context API becuase I wanted my code to be clean and to
+avoid prop drilling as much as possible. This was mostly for my own sanity as I
+wanted a very simple API for getting and updating values from one location and
+felt that a well organized context would save me time over the 3 hours that I
+had to build this. Some state was managed locally in the various components
+where it made sense, but the movie data and functions for updating it were kept
+in the movie-context.
 
-### Code Splitting
+I also created a theme-context for passing down theme data such as colors,
+breakpoints, and a few styled components that were to be used in various places.
+This was my first time creating a theme context like this and I like the way
+that it works. I know that styled-coponents has something similar built in, so
+I'm sure it wouldve been more efficient to use the built in ThemeProvider had I
+known how it worked. Definitely something I would like to learn more about.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Both contexts export a custom hook called use[ContextName] which exports all of
+the data and functions being passed to the parent providor. I like this becuase
+I can very easily get the values that I need from this custom hook such as
+`const { colors, breakpoints } = useTheme()`. I have been using this pattern
+regularly on professional projects and first was introduced to it from Kent C.
+Dodds in one of his state management blog posts.
 
-### Analyzing the Bundle Size
+### ENV Vars and CONSTANTS File
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+I created env vars for a few API endpoints/URLs and accessed these in my
+CONSTANTS.js file. This is also a pattern that I have been using lately
+professionally. This constants file added a few conditionals for ensuring that
+each env var was actually set in the .env and exporting javascript variables for
+each one if they exist or throwing helpful error messages if they don't.
 
-### Making a Progressive Web App
+### Folder Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+I know there are a million ways to set up react applications, but I enjoy having
+a folder for each component with all files relevant to that component within.
+This is helpful for keeping tests or subcomponents organized.
 
-### Advanced Configuration
+### jsconfig.json
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+I have used this file in the past for setting up typing and other configuration
+options. I only used this on this project for changing the baseURL to be the src
+folder which allows me to use absolute imports such as
+`import { ComponentName } from 'components/folder/componentName'` (eliminates
+'src/'). Obviously not necessary but it is quick to setup and makes me happy to
+avoid a few keystrokes.
 
-### Deployment
+### Theming
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+I used the TailwindCSS base theme as a reference for setting up this simple
+theme. I used their breakpoints, a few of the colors for the Tailwind color
+pallette and was able to more or less take the button styles from previous
+projects to speed up the styling process.
 
-### `yarn build` fails to minify
+### Netlify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Netlify is really awesome and incredibly easy to use. It took me five minutes to
+deploy this site and setup a workflow for deploying the site when pushing to the
+master branch. Seemed like a no brainer.
+
+# Future Improvements
+
+Future improvements that I would've liked to work on:
+
+- Filter component for displaying movies based on certain criterea (rating,
+  release year, etc)
+- Imporved performance all around. I did not have time to really dig in to the
+  consequences of sending an API request on every key stroke. I believe that
+  using my debounce method slightly improved this, but would be worth digging
+  into a bit more.
+- Better styling and animations. I like things to be pretty and fun.
+- More featured pagination component.
+- Loading and error states. Display these states to the user and ensure there
+  are no flashes of content before API response as there is now.
+- Some sort of favorites list for selecting/removing movies from your list would
+  be fun. Possible with a drag and drop interface on desktop? Over the top, but
+  would be a lot of fun.
+- Setup linting + formatting with eslint and prettier. I used prettier for
+  formatting on this project, but I like having this synced up with eslint
+  rules.
+- Some basic typing. I enjoy having some basic typing for the added intellisense
+  it offers in VS Code.
+- More tests. I am admittedly rusty with Jest and did not end up having time to
+  add more tests to this application.
+- Rebuild this project with a framework like NextJS with movie detail pages.
+  Explore how much could be statically renedered at build time.
+- Plenty more!
