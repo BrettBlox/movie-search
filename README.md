@@ -166,4 +166,4 @@ Future improvements that I would've liked to work on:
   Explore how much could be statically renedered at build time.
 - Plenty more!
 
-## Thank you so much for the opportunity to interview and build this application! It was a ton of fun and I can't wait to build more awesome things with you at Group Nine
+## Thank you so much for the opportunity to interview and build this application! It was a ton of fun and I hope to build more awesome things with you at Group Nine
