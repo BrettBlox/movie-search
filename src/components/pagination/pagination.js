@@ -16,12 +16,24 @@ export const Pagination = () => {
   const handlePrevious = () => {
     if (movies && currentPage !== 1) {
       setCurrentPage((currentPage) => currentPage - 1)
+
+      window.scrollTo({
+        top: 100,
+        left: 0,
+        behavior: 'smooth',
+      })
     }
   }
 
   const handleNext = () => {
     if (movies && currentPage < totalPages) {
       setCurrentPage((currentPage) => currentPage + 1)
+
+      window.scrollTo({
+        top: 100,
+        left: 0,
+        behavior: 'smooth',
+      })
     }
   }
 

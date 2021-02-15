@@ -61,6 +61,7 @@ export const MovieList = () => {
       <Search onChange={handleInputChange} />
       {movies && <Pagination />}
       {moviesGrid}
+      {movies && <Pagination />}
     </>
   )
 }
