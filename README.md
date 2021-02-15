@@ -43,10 +43,10 @@ passing around the global theme styles. I am excited to learn more and to become
 more proficient with styled-components.
 
 It has also been awhile since I have used Jest. My tests were failing at first,
-but luckily my custom context hooks informed me that I needed to bring in both
-context providers into my test files to wrap the components I was testing. I'm
-sure there is a better way, and I look forward to getting my Jest and testing
-skills polished and sharp.
+but luckily my custom context hooks threw errors which informed me that I needed
+to bring in both context providers into my test files to wrap the components I
+was testing. I'm sure there is a better way, and I look forward to getting my
+Jest and testing skills polished and sharp.
 
 ## Reasoning Behind Design Decisions
 
@@ -57,11 +57,11 @@ plan of action which included:
 - Folder structure and component hierarchy
 - Whether or not to use context or manage state locally per component and
   utilize more prop drilling
-- If using context, why and which contexts to create
+- If using context, why, and which contexts were needed
 - Taking tutorials to quickly get back up to speed with styled-components
-- As well as plenty of time figuring out the movie db api and messing around
-  with endpoints
-- Deployed to Netlify
+- Revisiting blog posts to refresh my memory on certain tools and patterns
+- Plenty of time figuring out the movie db api and messing around with the
+  variou endpoints
 
 ### Libraries Used
 
@@ -128,7 +128,7 @@ theme. I used their breakpoints, a few of the colors for the Tailwind color
 pallette and was able to more or less take the button styles from previous
 projects to speed up the styling process.
 
-### Netlify
+### Deploying on Netlify
 
 Netlify is really awesome and incredibly easy to use. It took me five minutes to
 deploy this site and setup a workflow for deploying the site when pushing to the
@@ -161,3 +161,5 @@ Future improvements that I would've liked to work on:
 - Rebuild this project with a framework like NextJS with movie detail pages.
   Explore how much could be statically renedered at build time.
 - Plenty more!
+
+# Thank you so much for the opportunity to interview and build this application! It was a ton of fun and I can't wait to build more awesome things for Group Nine.
