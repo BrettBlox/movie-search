@@ -1,9 +1,10 @@
-const App = () => {
-  return (
-    <div>
-    APP!!
-    </div>
-  );
-}
+import { ThemeProvider } from 'context/theme-context'
+import { Layout } from 'components/layout/layout'
 
-export default App;
+const App = () => (
+  <ThemeProvider>
+    <Layout>BODY STUFF HERE</Layout>
+  </ThemeProvider>
+)
+
+export default App
