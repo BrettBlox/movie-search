@@ -4,10 +4,10 @@ import { useTheme } from 'context/theme-context'
 
 /**
  * Next and previous buttons for requesting next page in list of results
- * 
- * I was taking to long to implement infinite scroll and this was a quicker 
- * solution for similar functionality. 
- * 
+ *
+ * I was taking to long to implement infinite scroll and this was a quicker
+ * solution for similar functionality.
+ *
  */
 export const Pagination = () => {
   const { movies, currentPage, setCurrentPage, totalPages } = useMovie()

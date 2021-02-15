@@ -23,7 +23,7 @@ const SearchStyles = styled.div`
   display: flex;
   justify-content: center;
   padding: 1rem 0;
-  margin: 2rem auto;
+  margin: 1rem auto;
   width: 100%;
 
   > div {
